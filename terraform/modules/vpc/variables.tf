@@ -71,3 +71,21 @@ variable "tags" {
   # { "Project" = "jlew-platform" }
   default = {}
 }
+
+variable "enable_nat_gateway" {
+  type        = bool
+  description = "Enable NAT gateway for the VPC"
+  # true
+  default = true
+}
+
+variable "nat_gateway_count" {
+  type        = number
+  description = "Number of NAT gateways to deploy"
+  # 1
+  default = 1
+  validation {
+    condition     = var.nat_gateway_count <= length(var.azs)
+    error_message = "nat_gateway_count must be less than or equal to the number of AZs."
+  }
+}
