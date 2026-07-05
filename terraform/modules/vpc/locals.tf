@@ -12,4 +12,6 @@ locals {
       az         = az
     }
   }
+
+  nat_public_subnet_key = "public-${var.azs[0]}"
 }

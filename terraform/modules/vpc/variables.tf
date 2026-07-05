@@ -72,6 +72,8 @@ variable "tags" {
   default = {}
 }
 
+
+## TODO: Implement these, figure out how these fit in.
 variable "enable_nat_gateway" {
   type        = bool
   description = "Enable NAT gateway for the VPC"
