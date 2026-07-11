@@ -18,7 +18,7 @@ resource "aws_route_table_association" "public" {
   route_table_id = aws_route_table.public.id
 }
 
-### Private  route table (single NAT gateway support only for now)
+### Private route table (single NAT gateway support only for now)
 resource "aws_route_table" "private" {
   vpc_id = aws_vpc.main_vpc.id
   tags = merge({
